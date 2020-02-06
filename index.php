@@ -1,11 +1,12 @@
 <?php
-require("PHPMailer/class.phpmailer.php");
+require 'phpmailer/PHPMailerAutoload.php';
 $mailer = new PHPMailer();
 $mailer->IsSMTP();
-$mail->SMTPDebug = 1; 
-$mailer->Host = 'ssl://smtp.gmail.com';
+$mailer->SMTPDebug = 1; 
+$mailer->Host = 'smtp.gmail.com';
 $mailer->Port = 587; //can be 587
-$mailer->SMTPAuth = TRUE;
+$mailer->SMTPAuth = true;
+$mailer->SMTPSecure = 'tls';
 // Change this to your gmail address
 $mailer->Username = 'priyanshootiwari@gmail.com';  
 // Change this to your gmail password
@@ -17,7 +18,8 @@ $mailer->FromName = 'Priyanshu Tiwari';
 $mailer->Body = 'If you are receving this mail then phpmailer is sucessfully working';
 $mailer->Subject = 'test case of phpmailer';
 // This is where you want your email to be sent
-$mailer->AddAddress('vaibhav2017shukla@gmail.com');  
+$mailer->addAddress('vaibhav2017shukla@gmail.com');  
+$mailer->addReplyTo('priyanshootiwari@gmail.com');  
 if(!$mailer->Send())
 {
     echo "Message was not sent<br/ >";
