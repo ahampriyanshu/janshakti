@@ -34,8 +34,8 @@ include("essentials/database.php");
         align-content: center;
         box-shadow: 0 0 5px gray;
         position: fixed;
-        bottom: 20px;
-        right: 30px;
+        bottom: 10px;
+        right: 10px;
         z-index: 99;
         font-size: 25px;
         border: none;
@@ -202,12 +202,21 @@ $this_page_first_result = ($page-1)*$results_per_page;
 $sql='SELECT * FROM questions LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
 $result = mysqli_query($con, $sql);
 
-while($row = mysqli_fetch_array($result)) {
-  echo $row['id'] . ' ' . $row['content']. '<br>';
-}
+while($row = mysqli_fetch_array($result)) :?>
+        <form method="post" action="addans.php">
+        <button type="submit" class="collapsible"> <span id="title"><?php echo $row["content"]; ?></span>
+ <span id="specs">Asked by </span><span id="details"><?php echo $row["username"]; ?></span> 
+        <span id="specs">time alloted is</span> <span id="details"><?php echo $row["tym"]; ?></span> 
+        <span id="specs">difficulty level estimated is</span><span id="details"><?php echo $row["level"]; ?></span> 
+        <span id="specs">question comes under</span> <span id="details"><?php echo $row["branch"]; ?></span><span id="specs"> branch</span>
+        <span id="specs">posted on</span> <span id="details"><?php echo $row["datetym"]; ?></span>
+            <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/>
+        </form><br>
+        </button><br>
+        <br>
+<?php endwhile; ?>
 
-// display the links to the pages
-for ($page=1;$page<=$number_of_pages;$page++) {
+<?php for ($page=1;$page<=$number_of_pages;$page++) {
   echo '<a href="index.php?page=' . $page . '">' . $page . '</a> ';
 }
 
