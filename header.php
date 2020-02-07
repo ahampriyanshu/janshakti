@@ -164,6 +164,6 @@ window.location.href = 'login.php';
   echo "<button onclick=\"redirect();\" class=\"addq\"><b>Login</b></button>";}
   else
   {
-  echo "<button onclick=\"window.location.href = 'addque.php';\" class=\"addq\"><b>Ask Question</b></button>";}
+  echo "<button onclick=\"window.location.href = 'addcomplaint.php';\" class=\"addq\"><b>Complaint</b></button>";}
   ?>
 </div>
