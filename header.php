@@ -161,7 +161,7 @@ window.location.href = 'login.php';
   ?>
   <?php
   if(!isset($_SESSION['loggedin'])){
-  echo "<button onclick=\"redirect();\" class=\"addq\"><b>Ask Question</b></button>";}
+  echo "<button onclick=\"redirect();\" class=\"addq\"><b>Login</b></button>";}
   else
   {
   echo "<button onclick=\"window.location.href = 'addque.php';\" class=\"addq\"><b>Ask Question</b></button>";}

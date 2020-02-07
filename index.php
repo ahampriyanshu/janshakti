@@ -175,25 +175,44 @@ include("essentials/database.php");
         </style>
     </head>
     <body >
-        <?php
-        $sql = "SELECT id,content,level,tym,branch,username,datetym FROM questions ORDER BY datetym DESC";
-        $result = $con->query($sql);
-        if ($result->num_rows > 0)
-        while($row = $result->fetch_assoc()) :?>
-        <form method="post" action="addans.php">
-        <button type="submit" class="collapsible">
-        <span id="title"><?php echo $row["content"]; ?></span>
- <span id="specs">Asked by </span><span id="details"><?php echo $row["username"]; ?></span> 
-        <span id="specs">time alloted is</span> <span id="details"><?php echo $row["tym"]; ?></span> 
-        <span id="specs">difficulty level estimated is</span><span id="details"><?php echo $row["level"]; ?></span> 
-        <span id="specs">question comes under</span> <span id="details"><?php echo $row["branch"]; ?></span><span id="specs"> branch</span>
-        <span id="specs">posted on</span> <span id="details"><?php echo $row["datetym"]; ?></span>
-            <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/>
-        </form><br>
-        </button><br>
-        <br>
-        <?php endwhile; ?>
-        <br>
+
+<?php
+// define how many results you want per page
+$results_per_page = 5;
+
+// find out the number of results stored in database
+$sql='SELECT * FROM questions';
+$result = mysqli_query($con, $sql);
+$number_of_results = mysqli_num_rows($result);
+
+// determine number of total pages available
+$number_of_pages = ceil($number_of_results/$results_per_page);
+
+// determine which page number visitor is currently on
+if (!isset($_GET['page'])) {
+  $page = 1;
+} else {
+  $page = $_GET['page'];
+}
+
+// determine the sql LIMIT starting number for the results on the displaying page
+$this_page_first_result = ($page-1)*$results_per_page;
+
+// retrieve selected results from database and display them on page
+$sql='SELECT * FROM questions LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
+$result = mysqli_query($con, $sql);
+
+while($row = mysqli_fetch_array($result)) {
+  echo $row['id'] . ' ' . $row['content']. '<br>';
+}
+
+// display the links to the pages
+for ($page=1;$page<=$number_of_pages;$page++) {
+  echo '<a href="index.php?page=' . $page . '">' . $page . '</a> ';
+}
+
+?>
+       
             <button onclick="topFunction()" id="top_button_index" title="Go to top">UP</button>
             <script>
             var mybutton = document.getElementById("top_button_index");

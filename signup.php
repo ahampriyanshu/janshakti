@@ -1,3 +1,4 @@
+<? include("header.php");?>
 <!DOCTYPE HTML
 <html>
   <head>
@@ -236,7 +237,7 @@ background-color: #833AB4;
               <td><input class="login_text_box" type="text" name="name" placeholder="Full name" id="name" required></td>
             </tr>
             <tr>
-              <td><input class="login_text_box" name="security" type="text" id="security"
+              <td><input class="login_text_box" name="security" type="text" id="city"
               placeholder="City" required></td>
             </tr>
             <tr>
