@@ -52,8 +52,6 @@ include("essentials/database.php");
                 
             }
     @media only screen and (min-width:481px) {
-                
-            
         body{
         overflow-y: scroll;
         background-color:#f3f7f7 ;
@@ -203,7 +201,7 @@ $sql='SELECT * FROM questions LIMIT ' . $this_page_first_result . ',' .  $result
 $result = mysqli_query($con, $sql);
 
 while($row = mysqli_fetch_array($result)) :?>
-        <form method="post" action="addans.php">
+        <form method="post" action="viewcomplaint.php">
         <button type="submit" class="collapsible"> <span id="title"><?php echo $row["content"]; ?></span>
  <span id="specs">Asked by </span><span id="details"><?php echo $row["username"]; ?></span> 
         <span id="specs">time alloted is</span> <span id="details"><?php echo $row["tym"]; ?></span> 
