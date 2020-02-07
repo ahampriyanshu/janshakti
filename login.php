@@ -155,7 +155,7 @@ background-color: #833AB4;
     <title>Login</title>
     <link href="forum.css" rel="stylesheet" type="text/css">
   </head>
-  <body background="img/back.jpg">
+  <body background="img/bacqqqqqqqk.jpg">
     <?php
     extract($_POST);
     if(isset($submit))

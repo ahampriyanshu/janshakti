@@ -159,13 +159,10 @@ html, body {
 <body><br>
   <div id="questionbox" >
 <form name="addform" action="postque.php" method="POST" enctype="multipart/form-data" required>
-<h class="title">File your Complaint</h> &emsp; &emsp; &emsp; &emsp; &emsp; 
 <input type="file" name="files[]">
-<input type="text" name="title">
-<textarea name="content" class="question_text" cols="80" rows="10" placeholder="Enter Question" required></textarea>
-<br><br>
-            <div class="select">
-            &emsp;
+<input class="login_text_index" type="text"  placeholder="Title" name="title"  required />
+<input class="login_text_index" type="text"  placeholder="Officer Name" name="officer"  required />
+<div class="select">
             <label>Department</label>&nbsp;&nbsp;
             <select name="Department" class="option">
               <option value="Adminstration">Adminstration</option>
@@ -175,10 +172,10 @@ html, body {
               <option value="Education">Education</option>
               <option value="Healthcare">Healthcare</option>
             </select>
-           &emsp;&emsp;
-           <input type="submit" id="submit" value="File Your Complaint">
-          
-          </div><br><br>
+          </div>
+<textarea name="content" class="question_text" cols="80" rows="10" placeholder="Enter Question" required></textarea>
+<br><br>
+            <input type="submit" id="submit" value="File Your Complaint">
 </form></div>
 </body>
 </html>
