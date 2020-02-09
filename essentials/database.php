@@ -2,14 +2,15 @@
 
 $host="localhost"; // Host name 
 $user="root";     // Mysql user 
-$datapass="may@2002#MAY";                 // User can here declare a variable for a password
+$datapass="may@2002#MAY";
+$database="janshakti1";                   // User can here declare a variable for a password
 
 $con=mysqli_connect("$host","$user","$datapass") or die('Database not connected'); //connecting database without a password
 
-$db = mysqli_select_db($con,"forum");
+$db = mysqli_select_db($con,$database);
 if (empty($db))     // if database doesn't exist 
 {
-	$dbcr = 'create database forum';   // create a database `forum` 
+	$dbcr = 'create database janshakti1';   // create a database `forum` 
 	$check = mysqli_query($con,$dbcr);
 
 
@@ -31,7 +32,7 @@ if (!$check) {
     username varchar(50) NOT NULL,
     password varchar(50) NOT NULL,
     name     varchar(50) NOT NULL,
-    security varchar(50) NOT NULL,
+    city varchar(50) NOT NULL,
     phone    bigint(50) NOT NULL,
     email    varchar(50) NOT NULL,
     datetym  varchar(50) NOT NULL,
@@ -51,15 +52,16 @@ $table2 = " select * from questions";
     $create2 = "CREATE TABLE questions (
     id   int(50) NOT NULL AUTO_INCREMENT,
     content   varchar(10000) NOT NULL,
-    level     varchar(50) NOT NULL,
-    tym       varchar(50) NOT NULL,
-    branch    varchar(50) NOT NULL,
+    title     varchar(500) NOT NULL,
+    officer       varchar(50) NOT NULL,
+    department    varchar(50) NOT NULL,
+    locality  varchar(50) NOT NULL,
     username  varchar(50) NOT NULL,
     datetym   varchar(50) NOT NULL ,
     PRIMARY KEY(id))";
     $ok2 = mysqli_query($con,$create2);
     if (!$ok2) {
-      echo 'error ';
+      echo 'error que';
     }else
     { echo 'table created successfully';  }
   }
@@ -72,15 +74,13 @@ $table3 = " select * from answers";
     $create3 = "CREATE TABLE answers (
     aid   int(50) NOT NULL AUTO_INCREMENT,
     id    int(50) NOT NULL,
-    content    varchar(10000) NOT NULL,
+    content    text(10000) NOT NULL,
     username   varchar(50) NOT NULL,
     datetym    varchar(50) NOT NULL,
-    tym        varchar(50) NOT NULL,
-    level      varchar(50) NOT NULL,
     PRIMARY KEY(aid) )";
     $ok3 = mysqli_query($con,$create3);
     if (!$ok3) {
-      echo 'error';
+      echo 'error answers';
     }else
     { echo 'table created successfully';  }
   }
@@ -96,7 +96,7 @@ $table4 = " select * from admin";
     superpassword varchar(50) NOT NULL)";
     $ok4 = mysqli_query($con,$create4);
     if (!$ok4) {
-      echo 'error ';
+      echo 'error admin ';
     }else
     { echo 'table created successfully';  }
   }
@@ -110,7 +110,7 @@ $admin_check_row = mysqli_fetch_array($admin_check_result, MYSQLI_ASSOC);
 if(! $admin_check_row) {        //entering data for admin
 
   $admin_info = "INSERT INTO admin (login_id,password,superpassword)  
-  VALUES ('gne','gate','priyanshu')";
+  VALUES ('priyanshu','shakti','jan')";
   $check5 = mysqli_query($con,$admin_info);
   if(!$check5){
     echo 'admin not created';
