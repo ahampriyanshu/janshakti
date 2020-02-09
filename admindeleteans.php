@@ -12,11 +12,8 @@ include("essentials/database.php");
   <link href="forum.css" rel="stylesheet" type="text/css">
   <head>
     <meta charset="UTF-8">
-  <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
-  <meta name="author" content="PriyanshuMay,priyanshumay">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Answer</title>
+    <title>Delete Reply</title>
   </head>
   <style type="text/css">
   .question_box {
@@ -96,11 +93,10 @@ include("essentials/database.php");
     while($row = $result->fetch_assoc()) :?>
     <div class="question_box" style="padding-left: 30px;">
       <span id="title"><?php echo $row["content"]; ?></span><br><hr id="line"><br>
-      <span id="specs">time required is</span> &nbsp;<span id="details"><?php echo $row["tym"]; ?></span> &emsp;
-      <span id="specs">difficulty level according to user is</span>&nbsp;&nbsp;<span id="details"><?php echo $row["level"]; ?></span> &emsp;
+      <span id="specs">time required is</span> &nbsp;<span id="details"><?php echo $row["username"]; ?></span>  
       <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["datetym"]; ?></span><br>
       <form method="post" action="delansbyadmin.php"><br>
-        <input  type="submit"  id="answer_button" value="Delete Answer"/>
+        <input  type="submit"  id="answer_button" value="Delete this reply"/>
         <input type="hidden" name="aid" value="<?php echo $row['aid']; ?>"/>
       </form>
     </div><br><br>

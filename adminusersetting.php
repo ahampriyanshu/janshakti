@@ -11,9 +11,6 @@ include("essentials/database.php");
 <html>
     <head>
         <meta charset="UTF-8">
-  <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
-  <meta name="author" content="PriyanshuMay,priyanshumay">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin Home</title>
         <link href="forum.css" rel="stylesheet" type="text/css">
@@ -81,8 +78,8 @@ include("essentials/database.php");
         <div class="setting_admin" >
             <img class="logocircle" id="set" src="img/setting.png" width="60px" height="60px" border="" style="position: absolute; top:6%; left:15%;" />
             <a id="setopt" class="active"  >Settings</a>
-            <a id="changeopt" href="admindeleteque.php">Delete Question</a>
-            <a id="changeopt" href="admindeleteans.php">Delete Answer</a>
+            <a id="changeopt" href="admindeleteque.php">Delete Complaints</a>
+            <a id="changeopt" href="admindeleteans.php">Delete Replies</a>
             <a id="changeopt" style="color: red; font-weight: bold;" href="deletebyadmin.php">Delete Account</a>
         </div>
     </div>

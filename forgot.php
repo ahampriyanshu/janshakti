@@ -6,9 +6,6 @@ include("essentials/database.php");
 	<link href="forum.css" rel="stylesheet" type="text/css">
 	<head>
 		<meta charset="UTF-8">
-  <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
-  <meta name="author" content="PriyanshuMay,priyanshumay">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Retrive Your Password</title>
 		<script language="javascript">
@@ -35,9 +32,9 @@ include("essentials/database.php");
     }
 		</style>
 	</head>
-	<body background="img/backgne.jpg">
+	<body background="img/back.jpg">
 		<div class="signinbox" style="position: absolute; top:12%; right:40%;">
-			<center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="1" /></center>
+			<center><img class="logocircle" src="img/logo.png"  title="logo" width="210px" height="200px" border="1" /></center>
 			<center>
 			<table>
 				<form action="backendforgot.php" name="passform" method="POST" onSubmit="return check();">
@@ -45,7 +42,7 @@ include("essentials/database.php");
 					<input class="login_text_box"  type="text" name="username" placeholder="Enter Username" required></th></tr>
 					<tr><th>
 					<input class="login_text_box"  type="text" name="phone" placeholder="Enter mobile number" required></th></tr>
-					<tr><th><input class="login_text_box" type="text" name="security" placeholder="Name of your childhood freind" required></th></tr>
+					<tr><th><input class="login_text_box" type="text" name="security" placeholder="Enter OTP" required></th></tr>
 					<tr><th><input class="login_text_box" type="password" name="npass" placeholder="New Password" required></th></tr>
 					<tr><th><input class="login_text_box" type="password" name="cpass" placeholder="Confirm New Password" required></th></tr></table>
 					<tr><th><b><button class="submit2" name="submit" type="submit">Change Password</button></b></th></tr><br><br>

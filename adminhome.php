@@ -122,7 +122,7 @@ include("essentials/database.php");
   </head>
   <body background="img/back.jpg">
     <?php
-    $sql = "SELECT user_id,username,password,name,security,phone,email,datetym FROM userbase";
+    $sql = "SELECT user_id,username,password,name,city,phone,email,datetym FROM userbase";
     $result = $con->query($sql);
     if ($result->num_rows > 0)
     while($row = $result->fetch_assoc()) :?>

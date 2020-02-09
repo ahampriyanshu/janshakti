@@ -20,10 +20,12 @@ include("essentials/database.php");
   </head>
   <style type="text/css">
   body{
-    background-attachment: fixed; 
+     background-size:     cover;               
+    background-repeat:   no-repeat;
+    background-position: center;
   }
   .question_box {
-  background: #f3f7f7;
+  background: #f1f1f1;
   border: 2px solid #e2e2e2;
   box-shadow: 0 0 5px #888;
   border-radius: 5px;
@@ -88,6 +90,61 @@ include("essentials/database.php");
   }
   #answer_button:hover, #answer_button:focus {
   background-color: #DB4437;
+}
+    #title{
+  line-height: 1.5;
+  color: #333;
+  tab-size: 4;
+  word-break: break-word;
+  text-align: left;
+  direction: ltr;
+  user-select: text;
+  font-size: 25px;
+  font-family: Courier new ;
+  }
+   #maintitle{
+  line-height: 1.5;
+  color: red;
+  tab-size: 4;
+  word-break: break-word;
+  text-align: left;
+  direction: ltr;
+  user-select: text;
+  font-size: 25px;
+  font-family: Courier new ;
+  }
+  #anstitle{
+  line-height: 1.5;
+  color: black;
+  tab-size: 4;
+  font-weight: bold;
+  word-break: break-word;
+  text-align: left;
+  direction: ltr;
+  user-select: text;
+  font-size: 15px;
+  font-family: Courier new ;
+  }
+  #specs{
+  font-size:12px;
+  font-family: courier new ;
+  font-weight: bold;
+  color: #833AB4;
+  }
+  #line{
+  border: 1px solid red;
+  border-radius: 2px;
+  }
+  #details{
+  font-weight:bold;
+  color: red;
+  font-size:12px;
+  }
+  #content{
+  font-weight:;
+  color: #222;
+  font-size:20px;
+  }
   }
   </style>
   <body background="img/back.jpg">
@@ -97,14 +154,18 @@ include("essentials/database.php");
     $result = $con->query($sql);
     if ($result->num_rows > 0)
     while($row = $result->fetch_assoc()) :?>
-    <div class="question_box" style="padding-left: 30px;">
-      <span id="title"><?php echo $row["content"]; ?></span><br><hr id="line"><br>
-      <span id="specs">time alloted is</span> &nbsp;<span id="details"><?php echo $row["tym"]; ?></span> &emsp;
-      <span id="specs">difficulty level estimated is</span>&nbsp;&nbsp;<span id="details"><?php echo $row["level"]; ?></span> &emsp;
-      <span id="specs">question comes under</span> &nbsp;<span id="details"><?php echo $row["branch"]; ?></span><span id="specs"> branch</span>&emsp;
+     <div class="question_box" style="padding-left: 30px;">
+    <?php  $image_id= $row["id"];
+     $filepath = "uploads/" .$image_id; 
+     echo "<img src=".$filepath." height=400 width=400 />";?>
+      <span style="position: absolute; top:4%; left:40%;" id="maintitle"><?php echo $row["title"]; ?></span><br><hr id="line"><br>
+    <span style="position: absolute; top:10%; left:37%;" id="content"><?php echo $row["content"]; ?></span><br>
+      <span id="specs">Regarding to department</span>&nbsp;&nbsp;<span id="details"><?php echo $row["department"]; ?></span> &emsp;
+      <span id="specs">Department comes under</span> &nbsp;<span id="details"><?php echo $row["officer"]; ?></span>
+      <span id="specs">Locality</span> &nbsp;<span id="details"><?php echo $row["locality"]; ?></span>
       <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["datetym"]; ?></span><br>
-      <form method="post" action="delquebyuser.php"><br>
-        <input  type="submit"  id="answer_button" value="Delete Question"/>
+      <form method="post" action="delquebyadmin.php"><br>
+        <input  type="submit"  id="answer_button" value="Delete this Complaint"/>
         <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/>
       </form>
     </div><br><br>

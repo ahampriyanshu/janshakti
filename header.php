@@ -107,6 +107,7 @@ display: none;
  @media only screen and (min-width:481px) 
  {
   .sidebar {
+    font-family: courier new;
   height: 100%;
   width: 0;
   position: fixed;
@@ -123,7 +124,7 @@ display: none;
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color:white;
   display: block;
   transition: 0.3s;
 }
@@ -134,22 +135,25 @@ display: none;
 
 .sidebar .closebtn {
   position: absolute;
-  top: 0;
+  top: 0.8%;
   left: 1%;
   font-size: 36px;
 }
 
+.sidebar .closebtn:hover {
+  color: #333;
+}
 .openbtn {
-  font-size: 20px;
+  font-size: 30px;
+  color: #4CAF50;
   cursor: pointer;
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 15px;
+  background-color:transparent;
+  font-weight: bolder;
   border: none;
 }
 
 .openbtn:hover {
-  background-color: #444;
+  font-size: 32px;
 }
 
 #main {
@@ -242,10 +246,12 @@ window.location.href = 'login.php';
 </script>
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">☰</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  <br>
+  <br>
+  <br>
+  <a href=about.php>About</a><br>
+  <a href="viewque.php">My Complaints</a><br>
+  <a href="contact.php">Contact</a><br>
 </div>
 
 <script>
@@ -265,7 +271,7 @@ function closeNav() {
   <div id="main">
   <button class="openbtn" id="openbtn" onclick="openNav()">☰</button>  
 </div>
-  <a href="index.php"><img style="position: absolute;top:2%;left:12%;" class="img-topbar" src=""  title=" logo" width="40px" height="30px" /></a>
+  <a href="index.php"><img style="position: absolute;top:2%;left:12%;" class="img-topbar" src="img/slogo.png"  title=" logo" width="65px" height="58px" /></a>
   <?php
   if(!isset($_SESSION['loggedin'])){
   echo "<div style=\"position: absolute; top:17%;right:2%;\" class=\"dropdown_header\">
@@ -287,11 +293,8 @@ function closeNav() {
   </div>";}
   
   ?>
-  <?php
-  if(!isset($_SESSION['loggedin'])){
-  echo "<button onclick=\"redirect();\" class=\"addq\"><b>Login</b></button>";}
-  else
-  {
-  echo "<button onclick=\"window.location.href = 'addcomplaint.php';\" class=\"addq\"><b>Complaint</b></button>";}
+<?php
+  if(isset($_SESSION['loggedin'])){
+  echo "<button onclick=\"window.location.href = 'addque.php';\" class=\"addq\"><b>File Complaint</b></button>";}
   ?>
 </div>

@@ -12,11 +12,8 @@ include("essentials/database.php");
   <link href="forum.css" rel="stylesheet" type="text/css">
   <head>
     <meta charset="UTF-8">
-  <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
-  <meta name="author" content="PriyanshuMay,priyanshumay">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Question</title>
+    <title>Delete Complaint</title>
   </head>
   <style type="text/css">
   .question_box {
@@ -42,10 +39,22 @@ include("essentials/database.php");
   font-size: 25px;
   font-family: Courier new ;
   }
+   #maintitle{
+  line-height: 1.5;
+  color: red;
+  tab-size: 4;
+  word-break: break-word;
+  text-align: left;
+  direction: ltr;
+  user-select: text;
+  font-size: 25px;
+  font-family: Courier new ;
+  }
   #anstitle{
   line-height: 1.5;
   color: black;
   tab-size: 4;
+  font-weight: bold;
   word-break: break-word;
   text-align: left;
   direction: ltr;
@@ -64,9 +73,14 @@ include("essentials/database.php");
   border-radius: 2px;
   }
   #details{
-  font-weight: bold;
+  font-weight:bold;
   color: red;
   font-size:12px;
+  }
+  #content{
+  font-weight:;
+  color: #222;
+  font-size:20px;
   }
   #answer_button {
   position:relative;
@@ -95,13 +109,17 @@ include("essentials/database.php");
     if ($result->num_rows > 0)
     while($row = $result->fetch_assoc()):?>
     <div class="question_box" style="padding-left: 30px;">
-      <span id="title"><?php echo $row["content"]; ?></span><br><hr id="line"><br>
-      <span id="specs">time alloted is</span> &nbsp;<span id="details"><?php echo $row["tym"]; ?></span> &emsp;
-      <span id="specs">difficulty level estimated is</span>&nbsp;&nbsp;<span id="details"><?php echo $row["level"]; ?></span> &emsp;
-      <span id="specs">question comes under</span> &nbsp;<span id="details"><?php echo $row["branch"]; ?></span><span id="specs"> branch</span>&emsp;
+    <?php  $image_id= $row["id"];
+     $filepath = "uploads/" .$image_id; 
+     echo "<img src=".$filepath." height=400 width=400 />";?>
+      <span style="position: absolute; top:4%; left:40%;" id="maintitle"><?php echo $row["title"]; ?></span><br><hr id="line"><br>
+    <span style="position: absolute; top:10%; left:37%;" id="content"><?php echo $row["content"]; ?></span><br>
+      <span id="specs">Regarding to department</span>&nbsp;&nbsp;<span id="details"><?php echo $row["department"]; ?></span> &emsp;
+      <span id="specs">Department comes under</span> &nbsp;<span id="details"><?php echo $row["officer"]; ?></span>
+      <span id="specs">Locality</span> &nbsp;<span id="details"><?php echo $row["locality"]; ?></span>
       <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["datetym"]; ?></span><br>
       <form method="post" action="delquebyadmin.php"><br>
-        <input  type="submit"  id="answer_button" value="Delete Question"/>
+        <input  type="submit"  id="answer_button" value="Delete this Complaint"/>
         <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/>
       </form>
     </div><br><br>

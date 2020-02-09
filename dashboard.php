@@ -5,7 +5,6 @@ header('location:index.php');}
 ?>
 <?php
 include("header.php");
-include("panel.php");
 include("essentials/database.php");
 ?>
 <!DOCTYPE html>
@@ -107,7 +106,7 @@ include("essentials/database.php");
       <center><img class="logocircle" src="img/user.png"  title="logo" width="150px" height="145px" border=""/></center><br><br>
       <?php
       $username = $_SESSION["loggedin"];
-      $sql = "SELECT user_id,username,password,name,security,phone,email,datetym FROM userbase WHERE username='$username'  ";
+      $sql = "SELECT user_id,username,password,name,city,phone,email,datetym FROM userbase WHERE username='$username'  ";
       $result = $con->query($sql);
       if ($result->num_rows > 0)
       while($row = $result->fetch_assoc()) :?>
@@ -129,6 +128,10 @@ include("essentials/database.php");
             <td><span id="specs">Mobile</span></td>
             <td><span id="details"> <?php echo $row["phone"]; ?></span></td>
           </tr>
+           <tr>
+            <td><span id="specs">City</span></td>
+            <td><span id="details"><?php echo $row["city"]; ?></span></td>
+          </tr>
           <tr>
             <td><span id="specs">E-mail</span></td>
             <td><span id="details"> <?php echo $row["email"]; ?></span></td>
@@ -146,11 +149,9 @@ include("essentials/database.php");
       <img class="logocircle" id="set" src="img/setting.png" width="60px" height="60px" border="" style="position: absolute; top:1%; left:23%;" />
       <a id="setopt" class="active"  >Settings</a>
       <a id="changeopt" href="changepassword.php">Change Password</a>
-      <a id="changeopt" href="changeusername.php">Change Username</a>
       <a id="changeopt" href="changemobile.php">Change Mobile</a>
-      <a id="changeopt" href="changemail.php">Change E-mail</a>
-      <a id="changeopt" href="viewque.php">Delete Question</a>
-      <a id="changeopt" href="viewans.php">Delete Answer</a>
+      <a id="changeopt" href="viewque.php">Delete Complaint</a>
+      <a id="changeopt" href="viewans.php">Delete Reply</a>
       <a id="changeopt" style="color: red; font-weight: bold;" href="deletebyuser.php">Delete Account</a>
     </div>
   </body>

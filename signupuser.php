@@ -20,19 +20,9 @@ echo "<script>
 alert('Username already taken');
 document.location='signup.php';
 </script>";
-}	
-else
-$q2 = "select * from userbase where email = '$email'";
-$result2 = mysqli_query($con,$q2);
-$num2 = mysqli_num_rows($result2);
-if ($num2 == 1) {
-echo "<script>
-alert('E-mail already taken');
-document.location='signup.php';
-</script>";
 }
 else {
-$qy = "INSERT INTO userbase(username,password,name,city,phone,email,datetym) VALUES ('$newuser','$pass','$name','$city','$phone','$email','$date')";
+$qy = "INSERT INTO userbase(username,password,name,city,phone,email,datetym) VALUES ('$a$newuser','$pass','$name','$city','$phone','$email','$date')";
 mysqli_query($con,$qy);
 require 'phpmailer/PHPMailerAutoload.php';
 $mailer = new PHPMailer();
@@ -45,14 +35,14 @@ $mailer->SMTPSecure = 'tls';
 
 $mailer->Username = 'priyanshootiwari@gmail.com';  
 $mailer->Password = 'Lexdumbo12'; 
-$mailer->FromName = 'Exhanger';  
+$mailer->FromName = 'JanShakti';  
 $mailer->From = 'priyanshootiwari@gmail.com';  
-$mailer->addAddress('vaibhav2017shukla@gmail.com');  
+$mailer->addAddress($email);  
 $mailer->addReplyTo('priyanshootiwari@gmail.com');  
 
 $mailer->isHTML(true);
-$mailer->Subject = 'Welocme to JanShakti';
-$mailer->Body = '<h1 align=center>Your account has been sucessfully created.</h1>';
+$mailer->Subject = 'test case of phpmailer';
+$mailer->Body = '<h1 align=center>Hello user you have sucessfully created your account</h1>';
 
 if(!$mailer->Send())
 {
