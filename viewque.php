@@ -1,4 +1,4 @@
-<?php  session_start(); ?>
+  <?php  session_start(); ?>
 <?php
 if(!isset($_SESSION['loggedin'])){
 header('location:index.php');}
@@ -12,9 +12,6 @@ include("essentials/database.php");
   <link href="forum.css" rel="stylesheet" type="text/css">
   <head>
     <meta charset="UTF-8">
-  <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
-  <meta name="author" content="PriyanshuMay,priyanshumay">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Question</title>
   </head>
@@ -154,6 +151,7 @@ include("essentials/database.php");
     $result = $con->query($sql);
     if ($result->num_rows > 0)
     while($row = $result->fetch_assoc()) :?>
+      <form method="POST" action="delquebyadmin.php">
      <div class="question_box" style="padding-left: 30px;">
     <?php  $image_id= $row["id"];
      $filepath = "uploads/" .$image_id; 
@@ -164,7 +162,7 @@ include("essentials/database.php");
       <span id="specs">Department comes under</span> &nbsp;<span id="details"><?php echo $row["officer"]; ?></span>
       <span id="specs">Locality</span> &nbsp;<span id="details"><?php echo $row["locality"]; ?></span>
       <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["datetym"]; ?></span><br>
-      <form method="post" action="delquebyadmin.php"><br>
+      <br>
         <input  type="submit"  id="answer_button" value="Delete this Complaint"/>
         <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/>
       </form>

@@ -7,9 +7,6 @@ header('location:index.php');}
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="description" content="GNDEC GATE FORUM">
-    <meta name="keywords" content="gate,gateforum,gne,gndec,">
-    <meta name="author" content="PriyanshuMay,priyanshumay">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     html,body{

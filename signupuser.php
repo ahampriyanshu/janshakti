@@ -24,7 +24,7 @@ document.location='signup.php';
 else {
 $qy = "INSERT INTO userbase(username,password,name,city,phone,email,datetym) VALUES ('$a$newuser','$pass','$name','$city','$phone','$email','$date')";
 mysqli_query($con,$qy);
-require 'phpmailer/PHPMailerAutoload.php';
+require 'essentials/PHPMailerAutoload.php';
 $mailer = new PHPMailer();
 $mailer->IsSMTP(); // disbale this when using live server
 $mailer->SMTPDebug = 0;

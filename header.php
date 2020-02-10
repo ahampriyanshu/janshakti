@@ -32,7 +32,10 @@
   left: 1%;
   font-size: 36px;
 }
-
+.logocircle{
+border-radius: 50%;
+border: 0;
+}
 .openbtn {
   font-size: 15px;
   cursor: pointer;
@@ -215,6 +218,10 @@ border-radius: 5%;
 .addq:hover{
 background-color: #833AB4;
 }
+.logocircle{
+border-radius:50%;
+border: 0;
+}
 .dropdown_header {
 position: relative;
 display: inline-block;
@@ -271,7 +278,7 @@ function closeNav() {
   <div id="main">
   <button class="openbtn" id="openbtn" onclick="openNav()">☰</button>  
 </div>
-  <a href="index.php"><img style="position: absolute;top:2%;left:12%;" class="img-topbar" src="img/slogo.png"  title=" logo" width="65px" height="58px" /></a>
+  <a href="index.php"><img style="position: absolute;top:2%;left:12%;" src="img/slogo.png" class="logocircle" title=" logo" width="65px" height="58px" /></a>
   <?php
   if(!isset($_SESSION['loggedin'])){
   echo "<div style=\"position: absolute; top:17%;right:2%;\" class=\"dropdown_header\">
