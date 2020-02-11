@@ -34,14 +34,14 @@ $mailer->SMTPAuth = true;
 $mailer->SMTPSecure = 'tls';
 
 $mailer->Username = 'priyanshootiwari@gmail.com';  
-$mailer->Password = 'Lexdumbo12'; 
+$mailer->Password = ''; 
 $mailer->FromName = 'JanShakti';  
 $mailer->From = 'priyanshootiwari@gmail.com';  
 $mailer->addAddress($email);  
 $mailer->addReplyTo('priyanshootiwari@gmail.com');  
 
 $mailer->isHTML(true);
-$mailer->Subject = 'test case of phpmailer';
+$mailer->Subject = 'Welcome';
 $mailer->Body = '<h1 align=center>Hello user you have sucessfully created your account</h1>';
 
 if(!$mailer->Send())
