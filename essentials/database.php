@@ -2,7 +2,7 @@
 
 $host="localhost"; // Host name 
 $user="root";     // Mysql user 
-$datapass="may@2002#MAY";
+$datapass="any_pass";
 $database="janshakti1";                   // User can here declare a variable for a password
 
 $con=mysqli_connect("$host","$user","$datapass") or die('Database not connected'); //connecting database without a password
