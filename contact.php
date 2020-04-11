@@ -52,13 +52,13 @@
 
   -->
   </style>
-  <body background="#f3f7f7">
+  <body background="img/back.jpg" >
     <?php
     include("header.php");    
     echo "<div id=\"abt\" style=\"position: absolute; top:12%;left:20%;\">
       <a href=\"https://github.com/PriyanshuMay\"> <img id=\"contact_img\"  style=\"position: absolute; top:52%;left:7%;\" src=\"img/Octocat.png\"  width=\"200px\" height=\"160px\" />
       </a>
-      <a  href=\"https://github.com/PriyanshuMay/GNE-Gate-Forum/archive/master.zip\"><img id=\"contact_img\" style=\"position: absolute; top:25%;right:7%;\" src=\"img/Octocat.png\" width=\"160px\" height=\"140px\" />
+      <a  href=\"https://github.com/PriyanshuMay/GNE-Gate-Forum/archive/master.zip\"><img id=\"contact_img\" style=\"position: absolute; top:25%;right:7%;\" src=\"img/Word.png\" width=\"160px\" height=\"140px\" />
       </a>
       <a  href=\"https://gndec.ac.in\"><img id=\"contact_img\" style=\"position: absolute; top:5%;left:7%; \" src=\"img/Octocat.png\"  width=\"160px\" height=\"140px\" />
       </a>

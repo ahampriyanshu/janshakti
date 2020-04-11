@@ -256,9 +256,10 @@ window.location.href = 'login.php';
   <br>
   <br>
   <br>
-  <a href=about.php>About</a><br>
-  <a href="viewque.php">My Complaints</a><br>
-  <a href="contact.php">Contact</a><br>
+  <a href="viewque.php">My Contribution</a><br>
+  <a href="org.php">Contact Org</a><br>
+  <a href="contact.php">About Us</a><br>
+  <a href=about.php>About This</a><br>
 </div>
 
 <script>
@@ -286,7 +287,6 @@ function closeNav() {
     <div class=\"dropdown_content_header\">
       <a href=\"login.php\">Login</a>
       <a href=\"signup.php\">SignUp</a>
-      <a href=\"admin.php\">Admin</a>
     </div>
   </div>";}
   else{

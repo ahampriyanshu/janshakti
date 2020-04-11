@@ -105,7 +105,7 @@ background-color: #833AB4;
     ?>
 <div id="signinbox_index_web" style="position: absolute; top:5%;right:36%;">
       <br>
-      <center><img class="logocircle" src="img/logo.png"  title="logo" width="200px" height="200px" border="2px"/></center>
+      <center><a href="index.php"><img class="logocircle" src="img/logo.png"  title="logo" width="200px" height="200px" border="0px"/></a></center>
       <centre><table align="center" style="padding-left: px;" WIDTH="70%" height="400px">
         <form method="post" name="login_form" action="" >
           <tr>
@@ -134,39 +134,6 @@ background-color: #833AB4;
   </tr>
 </table></centre>
 </div>
-<div id="signinbox_index_mob" >
-<center><img class="logocircle" src="img/1.png"  title="logo" width="240px" height="250px" /></center>
-<table align="center" border="0"  width ="75%" height="50%">
-  <form method="post" name="login_form" action="">
-    <tr>
-      <th><input class="login_text_index" type="TEXT" placeholder="LOGIN ID"  maxlength="20" size="25" name="username" required />
-    </th>
-  </tr>
-  <tr>
-    <th><input class="login_text_index" type="password"  placeholder="ENTER PASSWORD" name="password" required />
-  </th>
-</tr>
-<?php
-if(isset($found))
-{
-echo '<span class="inva" style=""><center>Invalid Username or password</center></span>';
-}
-?>
-<tr>
-  <td>&emsp;<input class="submit" type="submit" name="submit" Value="Login"/>
-&emsp;</form>
-</td>
-</tr>
-<tr><td>
-<a class="link_index" href="signup.php" >Sign Up ?</a>
-</td></tr>
-<tr>
-<td>&emsp;&emsp;
-<a  class="link_index" href="forg.php" >Forgot password</a>
-</td>
-</tr>
-</table>
-</div >
 <script>
 function myFunction(y) {
 if (y.matches) {

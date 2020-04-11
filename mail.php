@@ -9,7 +9,7 @@ $mailer->SMTPAuth = true;
 $mailer->SMTPSecure = 'tls';
 
 $mailer->Username = 'priyanshootiwari@gmail.com';  
-$mailer->Password = ' '; 
+$mailer->Password = 'Lexdumbo12'; 
 $mailer->FromName = 'Exhanger';  
 $mailer->From = 'priyanshootiwari@gmail.com';  
 $mailer->addAddress('vaibhav2017shukla@gmail.com');  

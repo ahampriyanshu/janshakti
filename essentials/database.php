@@ -1,27 +1,21 @@
 <?php  	
-
 $host="localhost"; // Host name 
 $user="root";     // Mysql user 
-$datapass="any_pass";
-$database="janshakti1";                   // User can here declare a variable for a password
+$datapass="may";
+$database="janshakti";                   // User can here declare a variable for a password
 
 $con=mysqli_connect("$host","$user","$datapass") or die('Database not connected'); //connecting database without a password
 
 $db = mysqli_select_db($con,$database);
 if (empty($db))     // if database doesn't exist 
 {
-	$dbcr = 'create database janshakti1';   // create a database `forum` 
+	$dbcr = 'create database janshakti';   // create a database `forum` 
 	$check = mysqli_query($con,$dbcr);
-
-
-
 if (!$check) {
 
       echo "database couldn't be created ";
   }	
   }
-
-
   $table1 = " select * from userbase";
   $check1 = mysqli_query($con,$table1);
 

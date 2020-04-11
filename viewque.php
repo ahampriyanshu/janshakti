@@ -19,7 +19,7 @@ include("essentials/database.php");
   body{
      background-size:     cover;               
     background-repeat:   no-repeat;
-    background-position: center;
+    background-position: fixed;
   }
   .question_box {
   background: #f1f1f1;
