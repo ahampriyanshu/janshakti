@@ -1,7 +1,7 @@
 <?php  	
 $host="localhost"; // Host name 
 $user="root";     // Mysql user 
-$datapass="may";
+$datapass="****";
 $database="janshakti";                   // User can here declare a variable for a password
 
 $con=mysqli_connect("$host","$user","$datapass") or die('Database not connected'); //connecting database without a password
@@ -104,7 +104,7 @@ $admin_check_row = mysqli_fetch_array($admin_check_result, MYSQLI_ASSOC);
 if(! $admin_check_row) {        //entering data for admin
 
   $admin_info = "INSERT INTO admin (login_id,password,superpassword)  
-  VALUES ('priyanshu','shakti','jan')";
+  VALUES ('admin','adminpass','superpass')";
   $check5 = mysqli_query($con,$admin_info);
   if(!$check5){
     echo 'admin not created';

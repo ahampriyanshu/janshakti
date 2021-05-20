@@ -89,7 +89,6 @@ window.location.href = 'index.php';
 };
 </script>
 <div class="top-bar">
-<img style="position: absolute;top:2%;left:12%;" class="img-topbar" src="img/logo.png"  title="college logo" width="230px" height="45px" />
   <?php
   if (session_status() == PHP_SESSION_NONE){
     echo "<div style=\"position: absolute; top:8%;right:3%;\" class=\"dropd\">

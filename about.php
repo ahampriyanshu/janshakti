@@ -34,8 +34,7 @@
 </head>
 <body background="img/back.jpg">
   <div class="abt_index" id ="abt_visibility" style="position: absolute; top:15%;left:18%; ">
-      <img  id="bulb_index" src="img/logo.png" alt="logo" width="400px"   height="400px;"
-      onmouseover="this.src='img/logo.png';"  onmouseout="this.src='img/bulb_off.png';" style="position:relative; top:-11%; left:21% ;  border="" />
+  <center><img src="img/logo.png" alt="logo" width="400px" height="400px;" /></center>
       <img class=' tech_used ' src='img/php.png' style="position:absolute; left:13%; bottom:3%; title="php" width="75px" height="60px" border="" />
       <img class=" tech_used" src="img/css.png"  style="position:absolute; left:32% ; bottom:3%; " title="CSS3" width="50px" height="60px" border="" />
       <img class=" tech_used" src="img/mysql.png"  style="position:absolute; left:47% ; bottom:3%; " title="mysql" width="60px" height="60px" border="" />

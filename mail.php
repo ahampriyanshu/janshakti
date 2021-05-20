@@ -8,12 +8,12 @@ $mailer->Port = 587;
 $mailer->SMTPAuth = true;
 $mailer->SMTPSecure = 'tls';
 
-$mailer->Username = 'priyanshootiwari@gmail.com';  
-$mailer->Password = 'Lexdumbo12'; 
+$mailer->Username = '*****@gmail.com';  
+$mailer->Password = '*****'; 
 $mailer->FromName = 'Exhanger';  
-$mailer->From = 'priyanshootiwari@gmail.com';  
-$mailer->addAddress('vaibhav2017shukla@gmail.com');  
-$mailer->addReplyTo('priyanshootiwari@gmail.com');  
+$mailer->From = '*****@gmail.com';  
+$mailer->addAddress('****@gmail.com');  
+$mailer->addReplyTo('*****@gmail.com');  
 
 $mailer->isHTML(true);
 $mailer->Subject = 'test case of phpmailer';

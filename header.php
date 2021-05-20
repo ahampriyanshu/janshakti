@@ -279,7 +279,6 @@ function closeNav() {
   <div id="main">
   <button class="openbtn" id="openbtn" onclick="openNav()">☰</button>  
 </div>
-  <a href="index.php"><img style="position: absolute;top:2%;left:12%;" src="img/slogo.png" class="logocircle" title=" logo" width="65px" height="58px" /></a>
   <?php
   if(!isset($_SESSION['loggedin'])){
   echo "<div style=\"position: absolute; top:17%;right:2%;\" class=\"dropdown_header\">

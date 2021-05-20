@@ -94,9 +94,7 @@
   </head>
 <body background="img/back.jpg">
 <div class="signupbox_signup" style="position: absolute; top:5%;right:37%;">
-      <center><br><br>
-      <img class="img-circle" src="img/logo.png"  width="200px" height="150px" style="position: relative; top:0%;"/>   
-      </center>
+<center><img style="margin-top: 10%;" class="logocircle" src="img/logo.png"  title="logo" width="150px" height="150px" border="1" /></center>
       <center><table width="70%" border="0" style="padding: 20px;">
         <tr><td>
           <form name="signupform" method="post" action="signupuser.php" onSubmit="return check();">
